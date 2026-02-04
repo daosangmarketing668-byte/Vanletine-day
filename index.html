@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chúc Valentine</title>
-    <link rel="stylesheet" href="Valentine.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine - Lời yêu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Valentine.css">
 </head>
 <body>
-    <div class="background"></div>
-    <div class="gift-box">
-        <a href="#" class="gift-link">Mở quà</a>
-    </div>
-    <div class="heart-container">
-        <div class="heart"></div>
-        <div class="message hidden" id="valentineMessage">
-            <h1>Valentine</h1>
-            <p>Valentine này, anh chỉ mong em luôn vui vẻ và cảm nhận được rằng có một người thật lòng nghĩ về em. Anh biết mỗi ngày em đi làm rất mệt, có những lúc áp lực mà anh vẫn chưa thể ở bên san sẻ hay giúp em được nhiều, điều đó khiến anh tự nhắc bản thân phải cố gắng hơn nữa. Anh muốn học nhiều hơn, trưởng thành hơn, để sau này có một tương lai đủ vững vàng, đủ bình yên cho cả hai. Anh không hứa những điều quá lớn lao, chỉ xin em cho anh 10 năm để nỗ lực, để chứng minh bằng hành động, và anh nhất định sẽ cưới em về làm vợ anh.</p>
+  <div class="background" aria-hidden="true"></div>
+  <main class="container" role="main">
+    <header class="header">
+      <h1 class="title">Một lời nhỏ trong ngày Valentine</h1>
+      <p class="subtitle">Gửi đến người em thương — mở quà để nhận lời chúc và trái tim anh.</p>
+    </header>
+
+    <section class="center">
+      <button class="gift-box" id="openGift" aria-haspopup="dialog">🎁 Mở quà</button>
+
+      <div class="decor-heart" aria-hidden="true">
+        <!-- simple heart SVG -->
+        <svg viewBox="0 0 32 29.6" class="heart-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M23.6 0c-2.9 0-5 1.9-6.6 3.9C15.4 1.9 13.3 0 10.4 0 4.7 0 0 4.7 0 10.4c0 7.6 10.6 13.8 16 19.2 5.4-5.4 16-11.6 16-19.2C32 4.7 27.3 0 21.6 0z"/>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal / Overlay -->
+  <div class="modal-overlay hidden" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close-btn" id="modalClose" aria-label="Đóng">×</button>
+      <div class="modal-content">
+        <h2 id="modalTitle">Valentine</h2>
+        <div class="message" id="valentineMessage">
+          <p id="messageText">Valentine này, anh chỉ mong em luôn vui vẻ và cảm nhận được rằng có một người thật lòng nghĩ về em. Anh biết mỗi ngày em đi làm rất mệt, có những lúc áp lực mà anh vẫn chưa thể ở bên san sẻ hay giúp em được nhiều. Điều đó khiến anh tự nhắc bản thân phải cố gắng hơn nữa. Anh muốn học nhiều hơn, trưởng thành hơn, để sau này có một tương lai đủ vững vàng, đủ bình yên cho cả hai. Anh không hứa những điều quá lớn lao, chỉ xin em cho anh 10 năm để nỗ lực, để chứng minh bằng hành động, và anh nhất định sẽ cưới em về làm vợ anh.</p>
+          <p class="signature">— Anh của em 💕</p>
         </div>
+      </div>
     </div>
-    <script src="Valentine.js"></script>
+  </div>
+
+  <script src="Valentine.js"></script>
 </body>
 </html>
