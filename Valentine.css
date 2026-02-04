@@ -1,0 +1,101 @@
+body {
+    background-color: #FFC0CB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;
+    z-index: -1;
+}
+
+.gift-box {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #FFDAB9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.gift-box:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.gift-link {
+    display: block;
+    text-decoration: none;
+    color: #FF4500;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.heart-container {
+    position: relative;
+    margin-top: 100px;
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 80px;
+    background-image: url('heart.png');
+    background-size: contain;
+    animation: fallHeart 5s ease-in-out infinite alternate;
+}
+
+@keyframes fallHeart {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+}
+
+.message {
+    max-width: 600px;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-size: 18px;
+    color: #333;
+}
+.message h2 {
+    font-size: 28px;
+    margin: 0 0 10px;
+    color: #E91E63;
+}
+.message.hidden {
+    display: none;
+}
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
